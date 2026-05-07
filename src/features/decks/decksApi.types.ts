@@ -1,9 +1,9 @@
 export type DeckResponse = {
-  items: DeckItem[]
+  items: Deck[]
   pagination: DeckPagination
 }
 
-export type DeckItem = {
+export type Deck = {
   isFavorite: boolean
   author: DeckItemAuthor
   id: string
