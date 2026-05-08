@@ -1,3 +1,6 @@
+import { useAppDispatch } from '../../../app/store'
+import { decksApi } from '../decks-api'
+import { addDecksTC } from '../decks-thunks'
 import s from './AddNewPostForm.module.css'
 import { useForm } from 'react-hook-form'
 
@@ -6,6 +9,8 @@ type FormValues = {
 }
 
 export const AddNewDeckForm = () => {
+  const dispatch = useAppDispatch()
+
   const {
     register,
     handleSubmit,
@@ -17,7 +22,7 @@ export const AddNewDeckForm = () => {
   })
 
   const onSubmit = (data: FormValues) => {
-    console.log(data)
+    dispatch(addDecksTC(data.name))
   }
 
   return (

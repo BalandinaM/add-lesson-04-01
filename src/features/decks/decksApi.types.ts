@@ -27,3 +27,5 @@ export type DeckPagination = {
   totalPages: number
   totalItems: number
 }
+
+export type CreateDeckResponse = Omit<Deck, 'isFavorite'>
